@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "cocoa-beans",
+	"version": "${version}",
+	"name": "Cocoa Beans",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Skip R."
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cocoa-beans/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "house.skip.cocoabeans.CocoaBeans",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "house.skip.cocoabeans.CocoaBeansClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"cocoa-beans.mixins.json",
+		{
+			"config": "cocoa-beans.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.23"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
