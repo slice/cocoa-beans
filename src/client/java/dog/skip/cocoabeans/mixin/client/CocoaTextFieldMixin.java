@@ -1,10 +1,9 @@
-package house.skip.cocoabeans.mixin.client;
+package dog.skip.cocoabeans.mixin.client;
 
-import house.skip.cocoabeans.KeyCodes;
+import dog.skip.cocoabeans.KeyCodes;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
-import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

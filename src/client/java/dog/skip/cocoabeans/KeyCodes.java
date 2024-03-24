@@ -1,4 +1,4 @@
-package house.skip.cocoabeans;
+package dog.skip.cocoabeans;
 
 public final class KeyCodes {
     public static final int BACKSPACE = 259;

@@ -1,4 +1,4 @@
-package house.skip.cocoabeans.mixin;
+package dog.skip.cocoabeans.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
