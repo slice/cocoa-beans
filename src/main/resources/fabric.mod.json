@@ -14,20 +14,6 @@
 	"license": "CC0-1.0",
 	"icon": "assets/cocoa-beans/icon.png",
 	"environment": "*",
-	"entrypoints": {
-		"main": [
-			{
-				"value": "house.skip.cocoabeans.CocoaBeans",
-				"adapter": "kotlin"
-			}
-		],
-		"client": [
-			{
-				"value": "house.skip.cocoabeans.CocoaBeansClient",
-				"adapter": "kotlin"
-			}
-		]
-	},
 	"mixins": [
 		"cocoa-beans.mixins.json",
 		{
@@ -39,8 +25,7 @@
 		"fabricloader": ">=0.15.7",
 		"minecraft": "~1.20.4",
 		"java": ">=17",
-		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.9.23"
+		"fabric-api": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
