@@ -73,10 +73,9 @@ public abstract class TextFieldWidgetMixin {
      */
     @Inject(
         method = "keyPressed(III)Z",
-        // PLZNO: this is _really_ gross, but we locate the control/command check (in the original code) and then back
-        // out of the TABLESWITCH just outside of the if statement that checks if the widget is focused/narratable.
-        // i have no idea why this is -5
-        at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;hasControlDown()Z", shift = At.Shift.BY, by = -5, ordinal = 0),
+        // inject just after the return that occurs if we fail the "i must be narratable and focused" check, so we can
+        // reuse it.
+        at = @At(value = "RETURN", shift = At.Shift.BY, by = 2, ordinal = 0),
         cancellable = true
     )
     private void handleDocumentwiseLinewise(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
