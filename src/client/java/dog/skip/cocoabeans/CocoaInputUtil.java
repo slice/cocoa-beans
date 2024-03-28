@@ -11,7 +11,7 @@ public final class CocoaInputUtil {
      * returns <code>true</code> when Command is down on macOS. This method is used to avoid that behavior.
      */
     public static boolean hasControlDownLikeActually() {
-        var handle = MinecraftClient.getInstance().getWindow().getHandle();
+        final long handle = MinecraftClient.getInstance().getWindow().getHandle();
         return InputUtil.isKeyPressed(handle, GLFW.GLFW_KEY_LEFT_CONTROL) || InputUtil.isKeyPressed(handle, GLFW.GLFW_KEY_RIGHT_CONTROL);
     }
 
@@ -19,7 +19,7 @@ public final class CocoaInputUtil {
      * Returns whether the command key (and only the command key) is down.
      */
     public static boolean hasCommandDownLikeActually() {
-        var handle = MinecraftClient.getInstance().getWindow().getHandle();
+        final long handle = MinecraftClient.getInstance().getWindow().getHandle();
         return InputUtil.isKeyPressed(handle, GLFW.GLFW_KEY_LEFT_SUPER) || InputUtil.isKeyPressed(handle, GLFW.GLFW_KEY_RIGHT_SUPER);
     }
 }
