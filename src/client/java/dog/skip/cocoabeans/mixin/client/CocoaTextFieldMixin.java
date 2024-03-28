@@ -1,9 +1,10 @@
 package dog.skip.cocoabeans.mixin.client;
 
-import dog.skip.cocoabeans.KeyCodes;
+import dog.skip.cocoabeans.CocoaInputUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import org.lwjgl.glfw.GLFW;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -77,19 +78,21 @@ public abstract class CocoaTextFieldMixin {
         cancellable = true
     )
     private void handleDocumentwiseLinewise(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
-        if (!Screen.hasControlDown() || !MinecraftClient.IS_SYSTEM_MAC) {
+        if (!MinecraftClient.IS_SYSTEM_MAC) {
             return;
         }
 
-        switch (keyCode) {
-            case KeyCodes.LEFT_ARROW, KeyCodes.UP_ARROW -> {
-                this.setCursorToStart(Screen.hasShiftDown());
-                cir.setReturnValue(true);
-            }
-            case KeyCodes.RIGHT_ARROW, KeyCodes.DOWN_ARROW -> {
-                this.setCursorToEnd(Screen.hasShiftDown());
-                cir.setReturnValue(true);
-            }
+        final boolean controlDown = CocoaInputUtil.hasControlDownLikeActually();
+        final boolean commandDown = CocoaInputUtil.hasCommandDownLikeActually();
+
+        if ((controlDown && keyCode == GLFW.GLFW_KEY_A) || (commandDown && (keyCode == GLFW.GLFW_KEY_LEFT || keyCode == GLFW.GLFW_KEY_UP))) {
+            // control-a, command-left, command-up
+            this.setCursorToStart(Screen.hasShiftDown());
+            cir.setReturnValue(true);
+        } else if ((controlDown && keyCode == GLFW.GLFW_KEY_E) || (commandDown && (keyCode == GLFW.GLFW_KEY_RIGHT || keyCode == GLFW.GLFW_KEY_DOWN))) {
+            // control-e, command-right, command-down
+            this.setCursorToEnd(Screen.hasShiftDown());
+            cir.setReturnValue(true);
         }
     }
 
