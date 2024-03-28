@@ -1,9 +1,11 @@
 # Cocoa Beans
 
-Cocoa Beans is a small Fabric mod for Minecraft 1.20.4 that adds support for
-native text editing shortcuts within in-game text fields. This mod only makes
-sense to use on macOS, and it tries to make itself completely inert when
-installed on Windows or Linux.
+Cocoa Beans is a small [Fabric] mod for Minecraft 1.20.4 that adds support for
+native text editing shortcuts within in-game text fields. When installed on
+Windows or Linux, the mod attempts to make itself inert by replicating Vanilla
+behavior; however, it'd be best to not install the mod on non-macOS systems.
+
+[fabric]: https://fabricmc.net
 
 <!-- prettier-ignore-start -->
 
