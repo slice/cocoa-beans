@@ -16,6 +16,9 @@ installed on Windows or Linux.
 
 ## Shortcuts
 
+Only a subset is implemented at this time. See all shortcuts
+[here](https://support.apple.com/en-us/HT201236#text).
+
 | Shortcut | Effect                                       | Notes                                                              |
 | -------- | -------------------------------------------- | ------------------------------------------------------------------ |
 | ⌘←       | Moves the cursor to the start                | Vanilla only lets you do this through the Home key.                |
