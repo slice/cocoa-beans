@@ -8,8 +8,10 @@
 		"Skip R."
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"email": "skip@skip.house",
+		"homepage": "https://github.com/slice/cocoa-beans",
+		"issues": "https://github.com/slice/cocoa-beans/issues",
+		"sources": "https://github.com/slice/cocoa-beans"
 	},
 	"license": "MIT",
 	"icon": "assets/cocoa-beans/icon.png",
