@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 //   - positive when deleting what's right of the caret (delete)
 
 @Mixin(TextFieldWidget.class)
-public abstract class CocoaTextFieldMixin {
+public abstract class TextFieldWidgetMixin {
     @Shadow
     public abstract void eraseCharactersTo(int position);
 
