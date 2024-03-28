@@ -3,7 +3,7 @@
 	"id": "cocoa-beans",
 	"version": "${version}",
 	"name": "Cocoa Beans",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Accurate Mac text editing shortcut handling",
 	"authors": [
 		"Skip R."
 	],
