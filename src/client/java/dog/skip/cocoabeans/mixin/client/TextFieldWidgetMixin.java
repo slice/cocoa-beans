@@ -1,5 +1,7 @@
 package dog.skip.cocoabeans.mixin.client;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dog.skip.cocoabeans.CocoaInputUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
@@ -35,20 +37,20 @@ public abstract class TextFieldWidgetMixin {
     /**
      * Redirects the modifier key check that occurs while deleting words to check for Option instead of Command.
      */
-    @Redirect(method = "erase(I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;hasControlDown()Z"))
-    private boolean wordwiseDeleteWithOption() {
-        if (!MinecraftClient.IS_SYSTEM_MAC) {
-            return Screen.hasControlDown();
+    @WrapOperation(method = "erase(I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;hasControlDown()Z"))
+    private boolean wordwiseDeleteWithOption(Operation<Boolean> original) {
+        if (MinecraftClient.IS_SYSTEM_MAC) {
+            return Screen.hasAltDown();
         }
 
-        return Screen.hasAltDown();
+        return original.call();
     }
 
     /**
      * Redirects the modifier key check that occurs when traversing (or extending a selection) over words to check
      * for Option instead of Command.
      */
-    @Redirect(
+    @WrapOperation(
         method = "keyPressed(III)Z",
         at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;hasControlDown()Z"),
         slice = @Slice(
@@ -57,12 +59,12 @@ public abstract class TextFieldWidgetMixin {
             to = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/Screen;isSelectAll(I)Z")
         )
     )
-    private boolean wordwiseTraversalWithOption() {
-        if (!MinecraftClient.IS_SYSTEM_MAC) {
-            return Screen.hasControlDown();
+    private boolean wordwiseTraversalWithOption(Operation<Boolean> original) {
+        if (MinecraftClient.IS_SYSTEM_MAC) {
+            return Screen.hasAltDown();
         }
 
-        return Screen.hasAltDown();
+        return original.call();
     }
 
     /**
