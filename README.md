@@ -1,29 +1,45 @@
 # Cocoa Beans
 
-Cocoa Beans is a small mod for Minecraft 1.20.4 that adds accurate shortcut
-handling for text fields when used on macOS.
+Cocoa Beans is a small Fabric mod for Minecraft 1.20.4 that adds support for
+native text editing shortcuts within in-game text fields. This mod only makes
+sense to use on macOS, and it tries to make itself completely inert when
+installed on Windows or Linux.
+
+<!-- prettier-ignore-start -->
 
 > [!CAUTION]
 > This mod only makes an effort to augment text field widgets (e.g. the one
 > used when sending chat messages). It doesn't implement handling for signs and
-> books just yet.
+> books.
+
+<!-- prettier-ignore-end -->
 
 ## Shortcuts
 
-| Shortcut | Effect                                       | Notes                                                                                                                |
-| -------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| ⌘←       | Moves the cursor to the start                | Vanilla only lets you do this through Home.                                                                          |
-| ⌘↑       | Ditto.                                       | Ditto.                                                                                                               |
-| ⌃A       | Ditto.                                       | Ditto.                                                                                                               |
-| ⌘→       | Moves the cursor to the end                  | Vanilla only lets you do this through End.                                                                           |
-| ⌘↓       | Ditto.                                       | Ditto.                                                                                                               |
-| ⌃E       | Ditto.                                       | Ditto.                                                                                                               |
-| ⌥→       | Moves the cursor right a word                | Vanilla provides this, but it checks for Command instead.                                                            |
-| ⌥←       | Moves the cursor left a word                 | Vanilla provides this, but it checks for Command instead.                                                            |
-| ⌥⌫       | Deletes a word to the left of the caret      | Performed using the key that most people call "backspace".                                                           |
-| ⌥⌦       | Deletes a word to the right of the caret     | Performed using the key that most people call "delete".                                                              |
-| ⌘⌫       | Deletes everything to the left of the caret  | Vanilla handles this shortcut by deleting a word instead. Performed using the key that most people call "backspace". |
-| ⌘⌦       | Deletes everything to the right of the caret | Vanilla handles this shortcut by deleting a word instead. Performed using the key that most people call "delete".    |
+| Shortcut | Effect                                       | Notes                                                              |
+| -------- | -------------------------------------------- | ------------------------------------------------------------------ |
+| ⌘←       | Moves the cursor to the start                | Vanilla only lets you do this through the Home key.                |
+| ⌘↑       | Ditto.                                       | Ditto.                                                             |
+| ⌃A       | Ditto.                                       | Ditto.                                                             |
+| ⌘→       | Moves the cursor to the end                  | Vanilla only lets you do this through the End key.                 |
+| ⌘↓       | Ditto.                                       | Ditto.                                                             |
+| ⌃E       | Ditto.                                       | Ditto.                                                             |
+| ⌥→       | Moves the cursor right a word                | Vanilla handles this, but it checks for Command instead of Option. |
+| ⌥←       | Moves the cursor left a word                 | Vanilla handles this, but it checks for Command instead of Option. |
+| ⌥⌫       | Deletes a word to the left of the caret      | &mdash;                                                            |
+| ⌥⌦       | Deletes a word to the right of the caret     | &mdash;                                                            |
+| ⌘⌫       | Deletes everything to the left of the caret  | Vanilla handles this shortcut by deleting a word instead.          |
+| ⌘⌦       | Deletes everything to the right of the caret | Vanilla handles this shortcut by deleting a word instead.          |
 
-As you might expect, add ⇧ to any shortcut that traverses over text in order to
-extend your selection instead.
+<!-- prettier-ignore-start -->
+
+> [!TIP]
+> What Mac calls ⌫, or "delete", is usually called "backspace" elsewhere. It
+> deletes to the left of the caret.
+> Similarly, ⌦, or "forward delete", is usually called "delete" elsewhere and it
+> deletes to the right of the caret.
+
+<!-- prettier-ignore-end -->
+
+As you might expect, adding ⇧ to any shortcut extends your selection through the
+run of text that you would've traversed.
