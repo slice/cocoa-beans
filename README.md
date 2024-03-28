@@ -46,3 +46,11 @@ Only a subset is implemented at this time. See all shortcuts
 
 As you might expect, adding ⇧ to any shortcut extends your selection through the
 run of text that you would've traversed.
+
+## Building
+
+Java 17 or later is required to build. Fabric 0.15.7 or later is targeted.
+
+```
+./gradlew build
+```
